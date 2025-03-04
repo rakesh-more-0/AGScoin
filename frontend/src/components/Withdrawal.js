@@ -65,8 +65,8 @@ const Withdrawal = () => {
     const [macToUsdtRate, setMacToUsdtRate] = useState(0);
     const [account, setAccount] = useState(null);
 
-    const contractAddress = "0x7ef75BD4de5d0B4f645dFC71Af2093a7Eab86651"; // Your staking contract address
-    const macAddress = "0xD77cDD0C29eA9cf47F42c989160dDAdA679d8ed5"; // MAC Coin contract address on BSC
+    const contractAddress = "0x2ca7ecC1Eb21B0B8427E5262273a05392F0Ed388"; // Your staking contract address
+    const macAddress = "0x480776744296c7A78bd85Dc48E071554e5B35C74"; // MAC Coin contract address on BSC
     const usdtAddress = "0x55d398326f99059fF775485246999027B3197955"; // USDT on BSC
 
     const checkBalance = async (web3, tokenAddress, userAddress) => {

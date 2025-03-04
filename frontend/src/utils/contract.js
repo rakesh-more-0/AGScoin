@@ -1,7 +1,7 @@
 import Web3 from "web3";
 import abi from "../build/contracts/MLMStorage.json";
 
-const contractAddress = "0xFe3d12CFD9590A17334247Eb410fcC7324Aa7d7d";
+const contractAddress = "0x2ca7ecC1Eb21B0B8427E5262273a05392F0Ed388";
 
 export const getContract = async () => {
     if (window.ethereum) {

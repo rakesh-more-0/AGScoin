@@ -138,7 +138,7 @@ const StakePage = () => {
       const accounts = await web3.eth.getAccounts();
       const account = accounts[0];
     
-      const contractAddress = "   "; // Your staking contract
+      const contractAddress = "0x2ca7ecC1Eb21B0B8427E5262273a05392F0Ed388"; // Your staking contract
       const usdtAddress = "0x55d398326f99059fF775485246999027B3197955"; // USDT on BSC
     
       const contractABI = [

@@ -36,7 +36,7 @@ function Dashboard() {
 
   const audioRef = useRef(null);
   const history = useHistory(); // To navigate back to the login page
-  const contractAddress = "0xFe3d12CFD9590A17334247Eb410fcC7324Aa7d7d"; // Your contract address
+  const contractAddress = "0x2ca7ecC1Eb21B0B8427E5262273a05392F0Ed388"; // Your contract address
   const macToUSDTConversionRate = 0.0005; // 1 MAC = 0.00005 USDT (Adjust if needed)
   const macDecimals = 18; // Assuming MAC has 18 decimals
   const dailyReturnRate = 0.5 / 100; // 0.5% per day

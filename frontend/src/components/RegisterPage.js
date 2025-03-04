@@ -12,7 +12,7 @@ const RegisterPage = () => {
   const [loading, setLoading] = useState(false);
   const history = useHistory();
 
-  const contractAddress = "0xFe3d12CFD9590A17334247Eb410fcC7324Aa7d7d"; // Your contract address
+  const contractAddress = "0x2ca7ecC1Eb21B0B8427E5262273a05392F0Ed388"; // Your contract address
   const usdtAddress = "0x55d398326f99059fF775485246999027B3197955"; // USDT contract address (BSC)
 
   const contractABI = [
