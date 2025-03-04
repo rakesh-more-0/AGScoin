@@ -1,0 +1,37 @@
+.loader {
+  display: inline-flex;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  font-family: monospace;
+  font-weight: bold;
+  line-height: 2em;
+  height: 1em;
+  width: 5ch;
+  text-align: center;
+  /* outline: 1px solid #000; */
+  color: #0000;
+  text-shadow: 0 0 0 #fff;
+  overflow: hidden;
+  animation: l4 50s infinite linear;
+}
+.loader::before {
+  animation-duration: 4s;
+}
+@keyframes l4 {
+  100% {
+    text-shadow: 0 var(--t, -2em) 0 #fff;
+  }
+}
+
+.counterblock {
+  min-width: 30px;
+  max-width: 100%;
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.counter section{
+  line-height: 30px !important;
+}

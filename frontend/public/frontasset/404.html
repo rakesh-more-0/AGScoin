@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // Redirects to the correct base path for React Router
+        var redirect = location.pathname.replace('/mac/', '/');
+        window.location.href = '/mac/' + redirect + location.search + location.hash;
+      </script>
+</body>
+</html>

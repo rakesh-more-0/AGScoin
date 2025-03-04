@@ -1,0 +1,2869 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+
+    <title>Staking BOSS - AGS</title>
+
+    <!-- Meta Tags -->
+    <meta
+      name="description"
+      content=""
+    />
+    <meta
+      name="keywords"
+      content=""
+    />
+    <meta name="author" content="mix_design" />
+
+    <!-- Viewport Meta-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+
+    <!-- Template Favicon & Icons Start -->
+    <link rel="icon" href="./img/backgrounds/coin.png" sizes="any" />
+    <link rel="icon" href="./img/backgrounds/coin.png" sizes="any" />
+    <link rel="icon" href="./img/backgrounds/coin.png" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="./img/backgrounds/coin.png" />
+    <link rel="manifest" href="./img/favicon/manifest.webmanifest" />
+    <!-- Template Favicon & Icons End -->
+
+    <!-- Facebook Metadata Start -->
+    <meta property="og:image:height" content="1200" />
+    <meta property="og:image:width" content="1200" />
+    <meta
+      property="og:title"
+      content="AGS Staking Protocol"
+    />
+    <meta
+      property="og:description"
+      content=""
+    />
+
+    <meta property="og:image" content="../logo/coinAnimation.png" />
+    <!-- Facebook Metadata End -->
+
+    <!-- Template Styles Start -->
+    <link rel="stylesheet" type="text/css" href="./css/loaders/loader.css" />
+    <link rel="stylesheet" type="text/css" href="./css/plugins.css" />
+    <link rel="stylesheet" type="text/css" href="./css/main.css" />
+    <!-- Template Styles End -->
+
+    <!-- Custom Browser Color Start -->
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: light)"
+      content="#BABEC8"
+    />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: dark)"
+      content="#141414"
+    />
+    <meta name="msapplication-navbutton-color" content="#141414" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <!-- Custom Browser Color End -->
+
+    <style>
+      #bottom-navigation {
+        display: none !important;
+      }
+
+
+    /* Styling for the notification toast */
+    .toast {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #28a745;
+      color: white;
+      padding: 10px;
+      border-radius: 5px;
+      font-size: 16px;
+      display: none;
+      /* opacity: 0; */
+      transition: opacity 0.3s ease;
+      z-index: 20;
+    }
+
+    .toast.show {
+      display: block;
+      opacity: 1;
+    }
+
+    .pe-auto{
+      cursor: pointer;
+    }
+    </style>
+  </head>
+
+  <body>
+    <!-- Loader Start -->
+    <div id="loader" class="loader">
+      <div class="loader__wrapper">
+        <div class="loader__content">
+          <div class="loader__count">
+            <span class="count__text">0</span>
+            <span class="count__percent">%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Loader End -->
+
+    <!-- Header Start -->
+    <header
+      id="header"
+      class="header d-flex justify-content-center loading__fade"
+    >
+      <!-- Navigation Menu Start -->
+      <div class="header__navigation d-flex justify-content-start">
+        <nav id="menu" class="menu">
+          <ul class="menu__list d-flex justify-content-start">
+            <li class="menu__item">
+              <a class="menu__link btn" href="#home">
+                <span class="menu__caption">Home</span>
+                <i class="ph ph-house-simple"></i>
+              </a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link btn" href="#about">
+                <span class="menu__caption">About Me</span>
+                <i class="ph ph-user"></i>
+              </a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link btn" href="#tokenomics">
+                <span class="menu__caption">Tokenomics</span>
+                <i class="ph ph-chart-donut"></i>
+              </a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link btn" href="#portfolio">
+                <span class="menu__caption">Portfolio</span>
+                <i class="ph ph-squares-four"></i>
+              </a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link btn" href="#services">
+                <span class="menu__caption">Services</span>
+                <i class="ph ph-sticker"></i>
+              </a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link btn" href="#resume">
+                <span class="menu__caption">Resume</span>
+                <i class="ph ph-article"></i>
+              </a>
+            </li>
+            <li class="menu__item d-none">
+              <a
+                class="menu__link btn"
+                href="#tokenomics "
+                id="load-react-app"
+                target="_top"
+              >
+                <span class="menu__caption">Tokenomics </span>
+                <i class="ph ph-chart-donut"></i>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <!-- Navigation Menu End -->
+    </header>
+    <!-- Header End -->
+
+    <!-- Fixed Logo Start -->
+    <div class="logo loading__fade">
+      <a href="#home" class="logo__link">
+        <!-- logo icon -->
+        <img src="./img/logoswap2.png" alt="Logo" />
+        <!-- logo text -->
+        <span class="logo-text">Aegis Coin*</span>
+      </a>
+    </div>
+    <!-- Fixed Logo End -->
+
+    <!-- Fixed Color Switch Start -->
+    <div class="color loading__fade d-none">
+      <button
+        id="color-switcher"
+        class="color-switcher"
+        type="button"
+        role="switch"
+        aria-label="light/dark mode"
+        aria-checked="true"
+      ></button>
+    </div>
+    <!-- Fixed Color Switch End -->
+    <!-- Fixed Color Switch Start -->
+    <div class="login loading__fade">
+      <a href="/register" id="load-react-app" target="_top">
+        <button>Start Staking</button>
+      </a>
+    </div>
+    <!-- Fixed Color Switch End -->
+
+    <!-- Page Content Start -->
+    <main id="page-content" class="page-content">
+      <!-- Main Section Start -->
+      <section id="home" class="main home">
+        <!-- Main Section Intro Start -->
+        <div class="main__intro">
+          <!-- Intro Background Start -->
+          <div class="intro__background intro-bg-01">
+            <div class="intro-bg-01__01" data-speed="0.6">
+              <img
+                src="./img/backgrounds/blueowl.png"
+                alt="Background Objects"
+                style="width: 70px;"
+              />
+              <!-- <div class="intro-bg__shadow"></div> -->
+            </div>
+            <!-- <div class="intro-bg-01__02" data-speed="0.8">
+              <img
+                src="./img/backgrounds/1200x1200_bg02.webp"
+                alt="Background Objects"
+              />
+              <div class="intro-bg__shadow"></div>
+            </div> -->
+          </div>
+          <!-- Intro Background End -->
+
+          <div class="container-fluid p-0 fullheight-desktop">
+            <div class="row g-0 fullheight-desktop align-items-xl-stretch">
+              <!-- Intro Data Line #1 (if needed) Start -->
+              <div class="col-12 col-xl-2"></div>
+              <!-- Intro Data Line #1 (if needed) End -->
+
+              <!-- Intro Content Start -->
+              <div class="col-12 col-xl-8 fullheight-desktop">
+                <!-- Headline Start -->
+                <div
+                  id="headline"
+                  class="headline d-flex align-items-start flex-column loading-wrap"
+                >
+                  <p class="headline__subtitle space-bottom loading__item mb-1">
+                    Hello!<br />I am AGS.
+                  </p>
+                  <p class="headline__subtitle space-bottom loading__item">
+                    How Are you?
+                  </p>
+                  <h1 class="headline__title loading__item mb-4">
+                    Seamlessly<br />Stake with
+                    <span class="gradient-text">Aegis Coin</span>
+                  </h1>
+                  <img
+                    src="./img/blob1.png"
+                    alt="Storage Smart Contract"
+                    class="flash-blob"
+                  />
+                  <div class="w-100">
+                    <!-- services stack single item -->
+                    <div class="">
+                      <div class="services-stack__inner glassmorphy">
+                        <div class="services-stack__descr px-4">
+                          <form>
+                            <div class="my-3">
+                              <label for="" class="form-label mb-4 fw-bold">Storage Smart Contract</label>
+                              <div class="d-flex align-items-center gap-3">
+                                <input
+                                  type="text"
+                                  class="form-control py-0"
+                                  id="contractAddress"
+                                  value="0x7ef75BD4de5d0B4f645dFC71Af2093a7Eab86651"
+                                  readonly
+                                />
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  width="3rem"
+                                  fill="none"
+                                  viewBox="0 0 24 24"
+                                  stroke-width="1.5"
+                                  stroke="currentColor"
+                                  class="size-6 pe-auto"
+                                  onclick="copyToClipboard('contractAddress')"
+                                >
+                                  <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 0 1-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 0 1 1.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 0 0-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 0 1-1.125-1.125v-9.25m12 6.625v-1.875a3.375 3.375 0 0 0-3.375-3.375h-1.5a1.125 1.125 0 0 1-1.125-1.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H9.75"
+                                  />
+                                </svg>
+                                <a href="https://bscscan.com/address/0x7ef75BD4de5d0B4f645dFC71Af2093a7Eab86651" target="_blank">
+                                  <img src="./img/aiicon.png" alt="Storage Smart Contract" />
+                                </a>
+                              </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                              <label for="" class="form-label mb-4 fw-bold">AGS Coin address</label>
+                              <div class="d-flex align-items-center gap-3">
+                                <input
+                                  type="email"
+                                  class="form-control py-0"
+                                  id="macCoinAddress"
+                                  value="0xD77cDD0C29eA9cf47F42c989160dDAdA679d8ed5"
+                                  readonly
+                                />
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  width="3rem"
+                                  fill="none"
+                                  viewBox="0 0 24 24"
+                                  stroke-width="1.5"
+                                  stroke="currentColor"
+                                  class="size-6 pe-auto"
+                                  onclick="copyToClipboard('macCoinAddress')"
+                                >
+                                  <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 0 1-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 0 1 1.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 0 0-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 0 1-1.125-1.125v-9.25m12 6.625v-1.875a3.375 3.375 0 0 0-3.375-3.375h-1.5a1.125 1.125 0 0 1-1.125-1.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H9.75"
+                                  />
+                                </svg>
+                                <a href="https://bscscan.com/address/0xD77cDD0C29eA9cf47F42c989160dDAdA679d8ed5" target="_blank">
+                                  <img src="./img/aiicon.png" alt="AGS Coin Address" />
+                                </a>
+                              </div>
+                            </div>
+                            
+                             <!-- <div class="">
+                              <label for="" class="form-label mb-4 fw-bold"
+                                >LP Lock address</label
+                              >
+                              <div class="d-flex align-items-center gap-3">
+                                <input
+                                  type="email"
+                                  class="form-control py-0"
+                                  id=""
+                                  value="0x12nasoja91298340"
+                                  aria-describedby=""
+                                  readonly
+                                />
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  width="3rem"
+                                  fill="none"
+                                  viewBox="0 0 24 24"
+                                  stroke-width="1.5"
+                                  stroke="currentColor"
+                                  class="size-6"
+                                >
+                                  <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 0 1-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 0 1 1.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 0 0-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 0 1-1.125-1.125v-9.25m12 6.625v-1.875a3.375 3.375 0 0 0-3.375-3.375h-1.5a1.125 1.125 0 0 1-1.125-1.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H9.75"
+                                  />
+                                </svg>
+                                <img
+                                  src="./img/pink.png"
+                                  alt="LP Lock Address"
+                                />
+                              </div>
+                            </div> -->
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="w-100 mt-5">
+                    <!-- services stack single item -->
+                    <div class="">
+                      <div class="services-stack__inner glassmorphy">
+                        <div class="services-stack__descr px-4">
+                          <form>
+                            <div class="my-3">
+                              <label for="" class="form-label mb-4 fw-bold capitalize text-white">CoinMarketCap</label>
+                              <div class="d-flex align-items-center gap-3">
+                                <input
+                                  type="text"
+                                  class="form-control py-0"
+                                  id="contractAddress"
+                                  value="0x9879371a8d50abaf4b541924915247c6e04c473c"
+                                  readonly
+                                />
+                                
+                                <a href="https://coinmarketcap.com/dexscan/bsc/0x9879371a8d50abaf4b541924915247c6e04c473c/" target="_blank">
+                                  <img src="./img/coinmarket.png" alt="Storage Smart Contract" />
+                                </a>
+                              </div>
+                            </div>
+                            
+                          
+                             <!-- <div class="">
+                              <label for="" class="form-label mb-4 fw-bold"
+                                >LP Lock address</label
+                              >
+                              <div class="d-flex align-items-center gap-3">
+                                <input
+                                  type="email"
+                                  class="form-control py-0"
+                                  id=""
+                                  value="0x12nasoja91298340"
+                                  aria-describedby=""
+                                  readonly
+                                />
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  width="3rem"
+                                  fill="none"
+                                  viewBox="0 0 24 24"
+                                  stroke-width="1.5"
+                                  stroke="currentColor"
+                                  class="size-6"
+                                >
+                                  <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 0 1-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 0 1 1.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 0 0-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 0 1-1.125-1.125v-9.25m12 6.625v-1.875a3.375 3.375 0 0 0-3.375-3.375h-1.5a1.125 1.125 0 0 1-1.125-1.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H9.75"
+                                  />
+                                </svg>
+                                <img
+                                  src="./img/pink.png"
+                                  alt="LP Lock Address"
+                                />
+                              </div>
+                            </div> -->
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Headline End -->
+              </div>
+              <!-- Intro Content End -->
+
+              <!-- Intro Data Line #2 (if needed) Start -->
+              <div class="col-12 col-xl-2"></div>
+              <!-- Intro Data Line #2 (if needed) End -->
+            </div>
+          </div>
+        </div>
+        <!-- Main Section Intro End -->
+        <!-- Inner Section - About - Start -->
+        <section id="about" class="inner inner-grid-bottom about">
+          <div class="inner__wrapper">
+            <div class="container-fluid p-0">
+              <div class="row g-0">
+                <!-- Inner Section Name Start -->
+                <div class="col-12 col-xl-2">
+                  <div class="inner__name">
+                    <!-- Content Block - Section Name Start -->
+                    <div class="content__block name-block">
+                      <span class="section-name icon-right animate-in-up">
+                        <span class="section-name-caption">About me</span>
+                        <i class="ph ph-arrow-down-right"></i>
+                      </span>
+                    </div>
+                    <!-- Content Block - Section Name Start -->
+                  </div>
+                </div>
+                <!-- Inner Section Name End -->
+
+                <!-- Inner Section Content Start -->
+                <div class="col-12 col-xl-8">
+                  <div class="inner__content">
+                    <!-- Content Block - H2 Section Title Start -->
+                    <div class="content__block section-grid-title">
+                      <div class="block__descr">
+                        <h2 class="reveal-type animate-in-up">
+                          Together,<br /> We Build Wealth for All.
+                        </h2>
+                      </div>
+                    </div>
+                    <!-- Content Block - H2 Section Title End -->
+
+                    <!-- Content Block - Image Divider Start -->
+                    <div class="content__block grid-block">
+                      <div class="container-fluid p-0">
+                        <div class="row g-0">
+                          <div class="col-12 grid-item">
+                            <!-- change the background image in the main.css file - .about-image-1 -->
+                            <div
+                              class="divider divider-image about-image-1 animate-in-up"
+                            ></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Content Block - Image Divider End -->
+
+                    <!-- Content Block - About Me Data Start -->
+                    <div class="content__block grid-block">
+                      <div class="container-fluid p-0">
+                        <div class="row g-0 justify-content-between">
+                          <div
+                            class="col-12 col-md-8 col-lg-7 col-xxl-9 grid-item about-descr pre-grid"
+                          >
+                            <p
+                              class="about-descr__text type-basic-160lh animate-in-up reveal-type animate-in-up"
+                            >
+                            Welcome to AGS Aegis Coin, a revolutionary staking platform designed to empower individuals worldwide. We offer a unique opportunity for people to participate in staking and earn our valuable coin, AGS Aegis Coin. Built on the BEP-20 Binance Smart Chain, our platform combines trust, transparency, and innovation to create a decentralized financial ecosystem that promotes wealth generation and financial independence.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Content Block - About Me Data End -->
+                  </div>
+                </div>
+                <!-- Inner Section Content End -->
+
+                <!-- Inner Section Aside Start -->
+                <div class="col-12 col-xl-2"></div>
+                <!-- Inner Section Aside End -->
+                 <!-- Content Block - Blockquote Start -->
+                <div class="content__block large-text-block mb-4">
+                  <div class="container-fluid p-0">
+                    <div class="row g-0">
+                      <div class="col-12">
+                        <blockquote class="reveal-type animate-in-up">
+                          Here we must run as fast as we can, just to stay in
+                          place. And if you wish to go anywhere you must run
+                          twice as fast as that.
+                        </blockquote>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Content Block - Blockquote End -->
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Inner Section - Tokenomics  - End -->
+<!-- Inner Section - Tokenomics  - Start -->
+<section id="tokenomics " class="inner inner-grid-bottom about pt-0 pb-5">
+  <!-- Content Block - Section Name Start -->
+  <div class="content__block name-block">
+    <span class="section-name icon-right animate-in-up">
+      <span class="section-name-caption Tokenomics ">Tokenomics </span>
+      <i class="ph ph-arrow-down-right"></i>
+    </span>
+  </div>
+        <!-- Main Section Media Start -->
+        <div class="main__media media-grid-bottom">
+          <div class="container-fluid p-0">
+            <div class="row g-0">
+              <!-- Media Data Line #1 (if needed) Start -->
+              <div class="col-12 col-xl-2"></div>
+              <!-- Media Data Line #1 (if needed) End -->
+
+              <!-- Media Content Start -->
+              <div class="col-12 col-xl-8 pb-5 pt-0">
+                <div class="container mt-5">
+                  <div class="info-box row glassmorphy">
+                    <div class="info-row ">
+                      <div class="col">
+                        
+                        <div class="label">Name:</div>
+                      </div>
+                      <div class="col">
+
+                        <div>Aegis Coin (AGS)</div>
+                      </div>
+                    </div>
+                    <div class="info-row">
+                      <div class="col">
+                        
+                        <div class="label">Symbol:</div>
+                      </div>
+                      <div class="col">
+                        <div>AGS</div>
+                      </div>
+                    </div>
+                    <div class="info-row">
+                      <div class="col">
+                        <div class="label">Decimal:</div>
+                      </div>
+                      <div class="col">
+                        <div>18</div>
+                      </div>
+                    </div>
+                    <div class="info-row">
+                      <div class="col">
+                        <div class="label">Total Fix Supply:</div>
+                      </div>
+                      <div class="col">
+                        <div>1,000,000
+                          AGS</div>
+                      </div>
+                    </div>
+                    <div class="info-row">
+                      <div class="col">
+                        <div class="label">Blockchain:</div>
+                      </div>
+                      <div class="col">
+                        <div>BSC (Binance)</div>
+                      </div>
+                    </div>
+                    <div class="info-row">
+                      <div class="col">
+                        <div class="label">Pair:</div>
+                      </div>
+                      <div class="col">
+                        <div>USDT (BEP-20)</div>
+                      </div>
+                    </div>
+                    <div class="info-row">
+                      <div class="col">
+                        <div class="label">LP:</div>
+                      </div>
+                      <div class="col">
+                        <div>Pancakeswap (Dex)</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-xl-8 pb-5 pt-0">
+
+                <div id="wrap" class="">
+                  <svg viewbox="0 0 450 400">
+                    <circle class="outline" r="100" cx="210" cy="200" />
+
+                    <circle class="pie-1" r="100" cx="210" cy="200" />
+                    <line class="line-1" x1="165" y1="100" x2="144" y2="65" />
+                    <text class="text-1 text-head" x="110" y="40">41.45%</text>
+                    <text class="text-1 text-lbl" x="115" y="60">Liquidity Pool</text>
+
+                    <circle class="pie-5" r="100" cx="210" cy="200" />
+                    <line class="line-5" x1="310" y1="240" x2="350" y2="255" />
+                    <text class="text-5 text-head" x="350" y="265"> 7.11%</text>
+                    <text class="text-5 text-lbl" x="335" y="285">
+                      Private Investors
+                    </text>
+
+                    <circle class="pie-2" r="100" cx="210" cy="200" />
+                    <line class="line-2" x1="105" y1="230" x2="65" y2="240" />
+                    <text class="text-2 text-head" x="10" y="255">19.29%</text>
+                    <text class="text-2 text-lbl" x="10" y="275"> Public Sale</text>
+                    
+                    <circle class="pie-3" r="100" cx="210" cy="200" />
+                    <line class="line-3" x1="165" y1="300" x2="150" y2="338" />
+                    <text class="text-3 text-head" x="115" y="365">15.25%</text>
+                    <text class="text-3 text-lbl" x="105" y="385">
+                      Project 
+                    </text>
+
+                    <circle class="pie-4" r="100" cx="210" cy="200" />
+                    <line class="line-4" x1="250" y1="300" x2="270" y2="340" />
+                    <text class="text-4 text-head" x="255" y="365"> 10.15%</text>
+                    <text class="text-4 text-lbl" x="245" y="385">
+                       Marketing & Rewards
+                    </text>
+                    
+                    
+                    
+                    <circle class="pie-6" r="100" cx="210" cy="200" />
+                    <line class="line-6" x1="320" y1="180" x2="355" y2="170" />
+                    <text class="text-6 text-head" x="360" y="175">5.25% </text>
+                    <text class="text-2 text-lbl" x="10" y="275"></text>
+                    <text class="text-6 text-lbl" x="350" y="195">
+                      Team & Advisor
+                    </text>
+
+                    <circle class="pie-7" r="100" cx="210" cy="200" />
+                    <line class="line-7" x1="300" y1="140" x2="335" y2="115" />
+                    <text class="text-7 text-head" x="340" y="115"> 1.50%</text>
+                    <text class="text-7 text-lbl" x="335" y="135">  Airdrop</text>
+                    
+                  </svg>
+                </div>
+
+                
+                
+              </div>
+              <!-- Media Content End -->
+
+              <div class="col-12 col-xl-8 pb-5 pt-0">
+                <div class=" ">
+                  <div class="">
+                      <h2 class="section-heading text-center"> Our Road <span>Map</span></h2>
+                  </div>
+                  <div class="sub-txt text-center">
+                      <p>Illustrates what we're working on next and the direction that we're moving towards.</p>
+                  </div>
+                  <div class="vertical-roadmap">
+                      <div class="roadmap-item">
+                          <div class="roadmap-text">
+                              <div class="roadmap-item-text">
+                                <h4>Project research and development </h4>
+                                <h4>Validating business model </h4>
+                                <h4>Securing strategic partners and advisors </h4>
+                                <h4>Creating proprietary smart contract architecture </h4>
+                                <h4>Stress-testing smart contracts </h4>
+                                <h4>Listing on Uniswap DEX </h4>
+                                <h4>LP assets lock </h4>
+                                <h4>Expanding the core team </h4>
+                                <h4>Staking pre-launch marketing campaigns </h4>
+                                <h4>Free airdrop starts </h4>
+                              </div>
+                              <div class="roadmap-day">
+                                  <span> 2024 </span>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="roadmap-item">
+                          <div class="roadmap-text">
+                              <div class="roadmap-item-text">
+                                <h4>Launch of Staking/Reward Program (DApp) </h4>
+                                <h4>Awareness marketing and PR campaigns</h4>
+                                <h4>Expanding global presence and awareness </h4>
+                                <h4>Listing on CoinMarketCap</h4>
+                                <h4>Growing international communities </h4>
+                                <h4>Listing on Uniswap DEX </h4>
+                                <h4>LP assets lock </h4>
+                                <h4>Expanding the core team </h4>
+                                <h4>Staking pre-launch marketing campaigns </h4>
+                                <h4>Free airdrop starts </h4>
+                              </div>
+                              <div class="roadmap-day">
+                                  <span>2025</span>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="roadmap-item">
+                          <div class="roadmap-text">
+                              <div class="roadmap-item-text">
+                                  <h4>Launch of AGS Wallet (DeFi) </h4>
+                                  <h4>Publishing a 10-year plan to scale to 10 million users</h4>
+                              </div>
+                              <div class="roadmap-day">
+                                  <span>2025, Q2 </span>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="roadmap-item">
+                          <div class="roadmap-text">
+                              <div class="roadmap-item-text">
+                                  <h4>Launch of AGS Arbitrage</h4>
+                                  <h4>Crypto trading platform with Binance Smart Chain (BSC) blockchains</h4>
+                              </div>
+                              <div class="roadmap-day">
+                                  <span>2026</span>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="roadmap-item">
+                          <div class="roadmap-text">
+                              <div class="roadmap-item-text">
+                                  <h4>Introduction of AGS Blockchain (V2) </h4>
+                                  <h4>Release of a whitepaper in multiple languages </h4>
+                                  
+                              </div>
+                              <div class="roadmap-day">
+                                  <span> 2026, Q2 </span>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="roadmap-item">
+                          <div class="roadmap-text">
+                              <div class="roadmap-item-text">
+                                  <h4>Future advancements (Coming Soon) </h4>
+                                  <h4>Blockchain (Coming Soon) </h4>
+                                  
+                              </div>
+                              <div class="roadmap-day">
+                                  <span>2026, Q3</span>
+                              </div>
+                          </div>
+                      </div>
+                      
+                  </div>
+              </div>
+              </div>
+
+              <!-- Media Data Line #2 (if needed) Start -->
+              <div class="col-12 col-xl-2"></div>
+              <!-- Media Data Line #2 (if needed) End -->
+
+              <!-- Media Fullwidth Divider Start -->
+              <div class="media__fullwidth d-none">
+                <!-- Marquee V1 Divider Start -->
+                <div class="items items--gsap">
+                  <div class="items__container">
+                    <!-- single item -->
+                    <div class="item icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 92.3 93.1"
+                        fill="currentColor"
+                      >
+                        <g>
+                          <rect x="45.7" class="st0" width="1" height="93.1" />
+                          <rect
+                            x="45.7"
+                            y="0"
+                            transform="matrix(0.8412 -0.5407 0.5407 0.8412 -17.8476 32.3497)"
+                            class="st0"
+                            width="1"
+                            height="93.1"
+                          />
+                          <rect
+                            x="45.7"
+                            y="0"
+                            transform="matrix(0.4155 -0.9096 0.9096 0.4155 -15.3764 69.2119)"
+                            class="st0"
+                            width="1"
+                            height="93.1"
+                          />
+                          <rect
+                            x="-0.4"
+                            y="46.1"
+                            transform="matrix(0.9898 -0.1425 0.1425 0.9898 -6.1646 7.0506)"
+                            class="st0"
+                            width="93.1"
+                            height="1"
+                          />
+                          <rect
+                            x="-0.4"
+                            y="46.1"
+                            transform="matrix(0.7556 -0.655 0.655 0.7556 -19.2157 41.618)"
+                            class="st0"
+                            width="93.1"
+                            height="1"
+                          />
+                          <rect
+                            x="-0.4"
+                            y="46.1"
+                            transform="matrix(0.2812 -0.9597 0.9597 0.2812 -11.5032 77.7858)"
+                            class="st0"
+                            width="93.1"
+                            height="1"
+                          />
+                          <rect
+                            x="45.7"
+                            y="0"
+                            transform="matrix(0.9595 -0.2817 0.2817 0.9595 -11.2479 14.8866)"
+                            class="st0"
+                            width="1"
+                            height="93.1"
+                          />
+                          <rect
+                            x="45.7"
+                            y="0"
+                            transform="matrix(0.6549 -0.7557 0.7557 0.6549 -19.2631 50.9572)"
+                            class="st0"
+                            width="1"
+                            height="93.1"
+                          />
+                          <rect
+                            x="45.7"
+                            y="0"
+                            transform="matrix(0.1423 -0.9898 0.9898 0.1423 -6.4999 85.629)"
+                            class="st0"
+                            width="1"
+                            height="93.1"
+                          />
+                          <rect
+                            x="-0.4"
+                            y="46.1"
+                            transform="matrix(0.9097 -0.4153 0.4153 0.9097 -15.1716 23.381)"
+                            class="st0"
+                            width="93.1"
+                            height="1"
+                          />
+                          <rect
+                            x="-0.4"
+                            y="46.1"
+                            transform="matrix(0.5411 -0.8409 0.8409 0.5411 -17.9774 60.1901)"
+                            class="st0"
+                            width="93.1"
+                            height="1"
+                          />
+                        </g>
+                      </svg>
+                    </div>
+
+                    <!-- single item -->
+                    <div class="item image image-1">
+                      <img src="./img/marquee/01.webp" alt="Image" />
+                    </div>
+
+                    <!-- single item -->
+                    <div class="item icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 89.2 82.8"
+                        fill="currentColor"
+                      >
+                        <g>
+                          <g>
+                            <rect class="st0" width="89.2" height="1" />
+                            <rect
+                              y="20.5"
+                              class="st0"
+                              width="89.2"
+                              height="1"
+                            />
+                            <rect
+                              y="40.9"
+                              class="st0"
+                              width="89.2"
+                              height="1"
+                            />
+                            <rect
+                              y="61.4"
+                              class="st0"
+                              width="89.2"
+                              height="1"
+                            />
+                            <rect
+                              y="81.8"
+                              class="st0"
+                              width="89.2"
+                              height="1"
+                            />
+                          </g>
+                          <rect
+                            x="2.5"
+                            y="10.2"
+                            transform="matrix(0.9712 -0.2384 0.2384 0.9712 -1.2518 11.1229)"
+                            class="st0"
+                            width="85.7"
+                            height="1"
+                          />
+                          <rect
+                            x="2.5"
+                            y="30.7"
+                            transform="matrix(0.9712 -0.2384 0.2384 0.9712 -6.1265 11.7116)"
+                            class="st0"
+                            width="85.7"
+                            height="1"
+                          />
+                          <rect
+                            x="2.5"
+                            y="51.2"
+                            transform="matrix(0.9712 -0.2384 0.2384 0.9712 -11.0059 12.3009)"
+                            class="st0"
+                            width="85.7"
+                            height="1"
+                          />
+                          <rect
+                            x="2.5"
+                            y="71.6"
+                            transform="matrix(0.9712 -0.2384 0.2384 0.9712 -15.8827 12.8923)"
+                            class="st0"
+                            width="85.7"
+                            height="1"
+                          />
+                        </g>
+                      </svg>
+                    </div>
+
+                    <!-- single item -->
+                    <div class="item image image-2">
+                      <img src="./img/marquee/02.webp" alt="Image" />
+                    </div>
+
+                    <!-- single item -->
+                    <div class="item icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 84 84"
+                        fill="currentColor"
+                      >
+                        <g>
+                          <path
+                            d="M42,84C18.8,84,0,65.1,0,42S18.8,0,42,0s42,18.8,42,42S65.1,84,42,84z M42,1C19.4,1,1,19.4,1,42
+                            s18.4,41,41,41s41-18.4,41-41S64.6,1,42,1z"
+                          />
+                          <path
+                            d="M42,69.8c-15.8,0-28.6-12.8-28.6-28.6h1c0,15.2,12.4,27.6,27.6,27.6s27.6-12.4,27.6-27.6h1
+                            C70.6,57,57.7,69.8,42,69.8z"
+                          />
+                          <g>
+                            <path
+                              d="M31.7,31.1H17.8v-0.5c0-3.8,3.1-7,7-7s7,3.1,7,7L31.7,31.1L31.7,31.1z M18.8,30.1h11.9
+                              c-0.2-3-2.8-5.5-5.9-5.5S19.1,27.1,18.8,30.1L18.8,30.1z"
+                            />
+                            <path
+                              d="M66.2,31.1H52.2v-0.5c0-3.8,3.1-7,7-7s7,3.1,7,7L66.2,31.1L66.2,31.1z M53.3,30.1h11.9
+                              c-0.2-3-2.8-5.5-5.9-5.5S53.5,27.1,53.3,30.1L53.3,30.1z"
+                            />
+                          </g>
+                        </g>
+                      </svg>
+                    </div>
+
+                    <!-- single item -->
+                    <div class="item image image-3">
+                      <img src="./img/marquee/03.webp" alt="Image" />
+                    </div>
+                  </div>
+                </div>
+                <!-- Marquee V1 Divider End -->
+              </div>
+              <!-- Media Fullwidth Divider End -->
+            </div>
+          </div>
+        </div>
+        <!-- Main Section Media End -->
+      </section>
+      <!-- Main Section End -->
+
+      <!-- Inner Section - Portfolio - Start -->
+      <section id="portfolio" class="inner inner-grid-bottom portfolio">
+        <div class="inner__wrapper">
+          <div class="container-fluid p-0">
+            <div class="row g-0">
+              <!-- Inner Section Name Start -->
+              <div class="col-12 col-xl-2">
+                <div class="inner__name">
+                  <!-- Content Block - Section Name Start -->
+                  <div class="content__block name-block">
+                    <span class="section-name icon-right animate-in-up">
+                      <span class="section-name-caption">Our Family </span>
+                      <i class="ph ph-arrow-down-right"></i>
+                    </span>
+                  </div>
+                  <!-- Content Block - Section Name Start -->
+                </div>
+              </div>
+              <!-- Inner Section Name End -->
+
+              <!-- Inner Section Content Start -->
+              <div class="col-12 col-xl-8">
+                <div class="inner__content">
+                  <!-- Content Block - H2 Section Title Start -->
+                  <div class="content__block section-grid-text-title">
+                    <div class="block__descr">
+                      <h2 class="reveal-type animate-in-up">
+                        Design, tech &<br />some magic
+                      </h2>
+                      
+                    </div>
+                  </div>
+                  <!-- Content Block - H2 Section Title End -->
+
+                  <!-- Content Block - Portfolio Gallery Masonry Grid Start -->
+                  <div class="content__block grid-block">
+                    <div class="container-fluid px-0 inner__gallery">
+                      <!-- Portfolio Gallery Start -->
+                      <div
+                        class="row gx-0 my-gallery d-none"
+                        itemscope
+                        itemtype="http://schema.org/ImageGallery"
+                        data-masonry='{"percentPosition": true }'
+                      >
+                        <!-- portfolio gallery single item -->
+                        <figure
+                          class="col-12 col-md-6 gallery__item grid-item animate-card-2"
+                          itemprop="associatedMedia"
+                          itemscope
+                          itemtype="http://schema.org/ImageObject"
+                        >
+                          <a
+                            href="./img/works/1400x1050_w01.webp"
+                            data-image="./img/works/1400x1050_w01.webp"
+                            class="gallery__link"
+                            itemprop="contentUrl"
+                            data-size="1400x1050"
+                          >
+                            <img
+                              src="./img/works/1400x1050_w01.webp"
+                              class="gallery__image"
+                              itemprop="thumbnail"
+                              alt="Image description"
+                            />
+                          </a>
+                          <figcaption
+                            class="gallery__descr"
+                            itemprop="caption description"
+                          >
+                            <h5>
+                              Designer Portfolio
+                              <small>UI/UX design</small>
+                            </h5>
+                            <p class="small">
+                              Mauris porttitor lobortis ligula, quis molestie
+                              lorem scelerisque eu. Morbi aliquam enim odio, a
+                              mollis ipsum tristique eu.
+                            </p>
+                          </figcaption>
+                        </figure>
+                        <!-- portfolio gallery single item -->
+                        <figure
+                          class="col-12 col-md-6 gallery__item grid-item animate-card-2"
+                          itemprop="associatedMedia"
+                          itemscope
+                          itemtype="http://schema.org/ImageObject"
+                        >
+                          <a
+                            href="./img/works/1100x1400_w02.webp"
+                            data-image="./img/works/1100x1400_w02.webp"
+                            class="gallery__link"
+                            itemprop="contentUrl"
+                            data-size="1100x1400"
+                          >
+                            <img
+                              src="./img/works/1100x1400_w02.webp"
+                              class="gallery__image"
+                              itemprop="thumbnail"
+                              alt="Image description"
+                            />
+                          </a>
+                          <figcaption
+                            class="gallery__descr opposite"
+                            itemprop="caption description"
+                          >
+                            <h5 class="opposite">
+                              Idea Character
+                              <small>AI Illustration</small>
+                            </h5>
+                            <p class="small">
+                              Mauris porttitor lobortis ligula, quis molestie
+                              lorem scelerisque eu. Morbi aliquam enim odio, a
+                              mollis ipsum tristique eu.
+                            </p>
+                          </figcaption>
+                        </figure>
+                        <!-- portfolio gallery single item -->
+                        <figure
+                          class="col-12 col-md-6 gallery__item grid-item animate-card-2"
+                          itemprop="associatedMedia"
+                          itemscope
+                          itemtype="http://schema.org/ImageObject"
+                        >
+                          <a
+                            href="./img/works/1400x1400_w03.webp"
+                            data-image="./img/works/1400x1400_w03.webp"
+                            class="gallery__link"
+                            itemprop="contentUrl"
+                            data-size="1400x1400"
+                          >
+                            <img
+                              src="./img/works/1400x1400_w03.webp"
+                              class="gallery__image"
+                              itemprop="thumbnail"
+                              alt="Image description"
+                            />
+                          </a>
+                          <figcaption
+                            class="gallery__descr opposite"
+                            itemprop="caption description"
+                          >
+                            <h5 class="opposite">
+                              Robot Character
+                              <small>3D Render</small>
+                            </h5>
+                            <p class="small">
+                              Mauris porttitor lobortis ligula, quis molestie
+                              lorem scelerisque eu. Morbi aliquam enim odio, a
+                              mollis ipsum tristique eu.
+                            </p>
+                          </figcaption>
+                        </figure>
+                        <!-- portfolio gallery single item -->
+                        <figure
+                          class="col-12 col-md-6 gallery__item grid-item animate-card-2"
+                          itemprop="associatedMedia"
+                          itemscope
+                          itemtype="http://schema.org/ImageObject"
+                        >
+                          <a
+                            href="./img/works/1400x1050_w04.webp"
+                            data-image="./img/works/1400x1050_w04.webp"
+                            class="gallery__link"
+                            itemprop="contentUrl"
+                            data-size="1400x1050"
+                          >
+                            <img
+                              src="./img/works/1400x1050_w04.webp"
+                              class="gallery__image"
+                              itemprop="thumbnail"
+                              alt="Image description"
+                            />
+                          </a>
+                          <figcaption
+                            class="gallery__descr"
+                            itemprop="caption description"
+                          >
+                            <h5>
+                              Infinity
+                              <small>3D Illustration</small>
+                            </h5>
+                            <p class="small">
+                              Mauris porttitor lobortis ligula, quis molestie
+                              lorem scelerisque eu. Morbi aliquam enim odio, a
+                              mollis ipsum tristique eu.
+                            </p>
+                          </figcaption>
+                        </figure>
+                        <!-- portfolio gallery single item -->
+                        <figure
+                          class="col-12 col-md-6 gallery__item grid-item animate-card-2"
+                          itemprop="associatedMedia"
+                          itemscope
+                          itemtype="http://schema.org/ImageObject"
+                        >
+                          <a
+                            href="./img/works/1400x1050_w05.webp"
+                            data-image="./img/works/1400x1050_w05.webp"
+                            class="gallery__link"
+                            itemprop="contentUrl"
+                            data-size="1400x1050"
+                          >
+                            <img
+                              src="./img/works/1400x1050_w05.webp"
+                              class="gallery__image"
+                              itemprop="thumbnail"
+                              alt="Image description"
+                            />
+                          </a>
+                          <figcaption
+                            class="gallery__descr"
+                            itemprop="caption description"
+                          >
+                            <h5>
+                              Designer Portfolio
+                              <small>UI/UX design</small>
+                            </h5>
+                            <p class="small">
+                              Mauris porttitor lobortis ligula, quis molestie
+                              lorem scelerisque eu. Morbi aliquam enim odio, a
+                              mollis ipsum tristique eu.
+                            </p>
+                          </figcaption>
+                        </figure>
+                      </div>
+                      <!-- Portfolio Gallery End -->
+
+                      
+                    </div>
+                  </div>
+                  <!-- Content Block - Portfolio Gallery Masonry Grid End -->
+                </div>
+              </div>
+              <!-- Inner Section Content End -->
+
+              <!-- Inner Section Aside Start -->
+              <div class="col-12 col-xl-2"></div>
+              <!-- Inner Section Aside End -->
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Inner Section - Portfolio - End -->
+
+      <!-- Inner Section - Services - Start -->
+      <section id="services" class="inner inner-stack-bottom services">
+        <div class="inner__wrapper">
+          <div class="container-fluid p-0">
+            <div class="row g-0">
+              <!-- Inner Section Name Start -->
+              <div class="col-12 col-xl-2">
+                <div class="inner__name">
+                  <!-- Content Block - Section Name Start -->
+                  <div class="content__block name-block">
+                    <span class="section-name icon-right animate-in-up">
+                      <span class="section-name-caption">Services</span>
+                      <i class="ph ph-arrow-down-right"></i>
+                    </span>
+                  </div>
+                  <!-- Content Block - Section Name Start -->
+                </div>
+              </div>
+              <!-- Inner Section Name End -->
+
+              <!-- Inner Section Content Start -->
+              <div class="col-12 col-xl-8">
+                <div class="inner__content">
+                  <!-- Content Block - H2 Section Title Start -->
+                  <div class="content__block pre-stack-text-block">
+                    <div class="block__descr">
+                      <h2 class="reveal-type animate-in-up">
+                        Creating<br />impactful projects
+                      </h2>
+                      <p class="h2__text type-basic-160lh animate-in-up">
+                        I wonder if I've been changed in the night? Let me
+                        think. Was I the same when I got up this morning? I
+                        almost think I can remember feeling a little different.
+                      </p>
+                    </div>
+                  </div>
+                  <!-- Content Block - H2 Section Title End -->
+
+                  <!-- Content Block - Services/Features Stacking Cards Block Start -->
+                  <div class="content__block">
+                    <div class="stack-wrapper">
+                      <div class="stack-offset"></div>
+                      <div class="services-stack">
+                        <!-- services stack single item -->
+                        <div class="stack-item">
+                          <div class="services-stack__inner">
+                            <div class="services-stack__title">
+                              <h3>AGS Staking Rewards</h3>
+                            </div>
+                            <div class="services-stack__descr">
+                              <i class="ph-thin ph-bezier-curve"></i>
+                              <p class="services-stack__text type-basic-160lh">
+                                A secure and transparent staking platform where users can lock their AGS Aegis Coins and earn consistent daily rewards of 0.5% for 200 days. The added compounding feature allows users to grow their wealth exponentially.
+                              </p>
+                              <p class="services-stack__text type-basic-160lh">
+                                <span class="fw-bold">Benefit:</span> Enables steady financial growth with a trusted mechanism backed by blockchain technology.
+                              </p>
+
+                            </div>
+                            <div class="services-stack__image d-none">
+                              <img
+                                class="service-img service-img-s"
+                                src="./img/services/1200x1000_s01.webp"
+                                alt="Service/Feature Image"
+                              />
+                              <img
+                                class="service-img service-img-m"
+                                src="./img/services/800x1000_s01.webp"
+                                alt="Service/Feature Image"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                        <!-- services stack single item -->
+                        <div class="stack-item">
+                          <div class="services-stack__inner">
+                            <div class="services-stack__title">
+                              <h3>Decentralized Finance (DeFi) Wallet</h3>
+                            </div>
+                            <div class="services-stack__descr">
+                              <i class="ph-thin ph-code"></i>
+                              <p class="services-stack__text type-basic-160lh mb-3">
+                                The AGS Wallet allows users to manage their coins effortlessly. It supports decentralized finance features such as secure storage, seamless transactions, and integration with staking and other blockchain platforms.
+                              </p>
+                              <p class="services-stack__text type-basic-160lh">
+                                <span class="fw-bold">Benefit:</span>Ensures complete control and transparency in financial transactions, eliminating the need for intermediaries
+                              </p>
+                            </div>
+                            <div class="services-stack__image d-none">
+                              <img
+                                class="service-img service-img-s"
+                                src="./img/services/1200x1000_s02.webp"
+                                alt="Service/Feature Image"
+                              />
+                              <img
+                                class="service-img service-img-m"
+                                src="./img/services/800x1000_s02.webp"
+                                alt="Service/Feature Image"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                        <!-- services stack single item -->
+                        <div class="stack-item">
+                          <div class="services-stack__inner">
+                            <div class="services-stack__title">
+                              <h3>Affiliate Reward Program</h3>
+                            </div>
+                            <div class="services-stack__descr">
+                              <i class="ph-thin ph-cube"></i>
+                              <p class="services-stack__text type-basic-160lh mb-3">
+                                A five-level referral program designed to reward users for expanding the AGS community. Participants earn additional income by introducing others to the staking platform.
+                              </p>
+                              <p class="services-stack__text type-basic-160lh">
+                                <span class="fw-bold">Benefit:</span> Fosters a strong and supportive community while creating passive income streams for affiliates.
+                              </p>
+                            </div>
+                            <div class="services-stack__image d-none">
+                              <img
+                                class="service-img service-img-s"
+                                src="./img/services/1200x1000_s03.webp"
+                                alt="Service/Feature Image"
+                              />
+                              <img
+                                class="service-img service-img-m"
+                                src="./img/services/800x1000_s03.webp"
+                                alt="Service/Feature Image"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                        <!-- services stack single item -->
+                        <div class="stack-item">
+                          <div class="services-stack__inner">
+                            <div class="services-stack__title">
+                              <h3>AI-Powered Trading and Arbitrage Platform</h3>
+                            </div>
+                            <div class="services-stack__descr">
+                              <i class="ph-thin ph-graph"></i>
+                              <p class="services-stack__text type-basic-160lh mb-3">
+                                Leveraging AI for crypto trading on Polygon, Binance Smart Chain, and Ethereum blockchains, this platform offers opportunities for users to diversify their investments and maximize returns.
+                              </p>
+                              <p class="services-stack__text type-basic-160lh">
+                                <span class="fw-bold">Benefit:</span> Provides advanced tools and strategies for efficient trading, empowering users with actionable insights.
+                              </p>
+                            </div>
+                            <div class="services-stack__image d-none">
+                              <img
+                                class="service-img service-img-s"
+                                src="./img/services/1200x1000_s04.webp"
+                                alt="Service/Feature Image"
+                              />
+                              <img
+                                class="service-img service-img-m"
+                                src="./img/services/800x1000_s04.webp"
+                                alt="Service/Feature Image"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Content Block - Services/Features Stacking Cards Block End -->
+                </div>
+              </div>
+              <!-- Inner Section Content End -->
+
+              <!-- Inner Section Aside Start -->
+              <div class="col-12 col-xl-2"></div>
+              <!-- Inner Section Aside End -->
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Inner Section - Services - End -->
+
+      <!-- Inner Section - Resume - Start -->
+      <section id="resume" class="inner inner-grid-bottom resume">
+        <div class="inner__wrapper">
+          <div class="container-fluid p-0">
+            <div class="row g-0">
+              <!-- Inner Section Name Start -->
+              <div class="col-12 col-xl-2">
+                <div class="inner__name">
+                  <!-- Content Block - Section Name Start -->
+                  <div class="content__block name-block">
+                    <span class="section-name icon-right animate-in-up">
+                      <span class="section-name-caption">Resume</span>
+                      <i class="ph ph-arrow-down-right"></i>
+                    </span>
+                  </div>
+                  <!-- Content Block - Section Name Start -->
+                </div>
+              </div>
+              <!-- Inner Section Name End -->
+
+              <!-- Inner Section Content Start -->
+              <div class="col-12 col-xl-8">
+                <div class="inner__content">
+                  <!-- Content Block - H2 Section Title Start -->
+                  <!-- Content Block - Testimonials Start -->
+                  <div class="content__block pre-offcanvas-text-block">
+                    <!-- Section Subtitle Start -->
+                    <div class="block__subtitle">
+                      <p class="tagline-chapter animate-in-up">
+                        My client's stories
+                      </p>
+                    </div>
+                    <!-- Section Subtitle End -->
+
+                    <!-- Testimonials Slider Start -->
+                    <div class="testimonials-slider">
+                      <!-- slider main container -->
+                      <div class="swiper-testimonials">
+                        <!-- additional required wrapper -->
+                        <div class="swiper-wrapper">
+                          <!-- single slide -->
+                          <div class="swiper-slide">
+                            <div class="testimonials-card animate-in-up">
+                              <div class="container-fluid p-0 fullheight-l">
+                                <div
+                                  class="row g-0 d-flex align-items-stretch fullheight-l"
+                                >
+                                  <div
+                                    class="col-12 col-lg-6 testimonials-card__tdata"
+                                  >
+                                    <div
+                                      class="testimonials-card__tauthor d-flex"
+                                    >
+                                      <div
+                                        class="tauthor__avatar animate-in-up d-none"
+                                      >
+                                        <img
+                                          src="./img/avatars/400x400_t01.webp"
+                                          alt="Review Author"
+                                        />
+                                      </div>
+                                      <div
+                                        class="tauthor__info d-flex flex-column justify-content-center"
+                                      >
+                                        <h4 class="tauthor__name animate-in-up">
+                                          Sarah Williams
+                                        </h4>
+                                        <p
+                                          class="tauthor__position small animate-in-up"
+                                        >
+                                        United States
+                                        </p>
+                                        <div
+                                          class="tauthor__rating d-flex animate-in-up"
+                                        >
+                                          <i class="ph-fill ph-star"></i>
+                                          <i class="ph-fill ph-star"></i>
+                                          <i class="ph-fill ph-star"></i>
+                                          <i class="ph-fill ph-star"></i>
+                                          <i class="ph-fill ph-star"></i>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div
+                                      class="testimonials-card__descr animate-in-up"
+                                    >
+                                      <p class="type-basic-160lh">
+                                        I discovered AGS Aegis Coin during a difficult financial phase. Their staking program helped me build consistent earnings. The transparency and trust AGS provides made me a firm believer. Today, I have not only achieved financial stability but also gained confidence in decentralized technology.
+                                      </p>
+                                    </div>
+                                    <!-- <div
+                                      class="testimonials-card__btnholder animate-in-up"
+                                    >
+                                      <a
+                                        class="btn btn-line icon-right slide-right"
+                                        href="#0"
+                                      >
+                                        <span class="btn-caption"
+                                          >Project page</span
+                                        >
+                                        <i class="ph ph-arrow-right"></i>
+                                      </a>
+                                    </div> -->
+                                  </div>
+                                  <div
+                                    class="col-12 col-lg-6 testimonials-card__timage fullheight-l"
+                                  >
+                                    <div
+                                      class="timage__inner fullheight-l animate-in-up d-none"
+                                    >
+                                      <img
+                                        src="./img/testimonials/1400x1200_t01.webp"
+                                        alt="Testimonials Image"
+                                      />
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- single slide -->
+                          <div class="swiper-slide">
+                            <div class="testimonials-card animate-in-up">
+                              <div class="container-fluid p-0 fullheight-l">
+                                <div
+                                  class="row g-0 d-flex align-items-stretch fullheight-l"
+                                >
+                                  <div
+                                    class="col-12 col-lg-6 testimonials-card__tdata"
+                                  >
+                                    <div
+                                      class="testimonials-card__tauthor d-flex"
+                                    >
+                                      <div
+                                        class="tauthor__avatar animate-in-up d-none"
+                                      >
+                                        <img
+                                          src="./img/avatars/400x400_t02.webp"
+                                          alt="Review Author"
+                                        />
+                                      </div>
+                                      <div
+                                        class="tauthor__info d-flex flex-column justify-content-center"
+                                      >
+                                        <h4 class="tauthor__name animate-in-up">
+                                          Rahul Mehta
+                                        </h4>
+                                        <p
+                                          class="tauthor__position small animate-in-up"
+                                        >
+                                        India
+                                        </p>
+                                        <div
+                                          class="tauthor__rating d-flex animate-in-up"
+                                        >
+                                          <i class="ph-fill ph-star"></i>
+                                          <i class="ph-fill ph-star"></i>
+                                          <i class="ph-fill ph-star"></i>
+                                          <i class="ph-fill ph-star"></i>
+                                          <i class="ph-fill ph-star"></i>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div
+                                      class="testimonials-card__descr animate-in-up"
+                                    >
+                                      <p class="type-basic-160lh">
+                                        As an entrepreneur, finding trustworthy platforms for investment is challenging. AGS's locked coin supply and daily compounding rewards gave me the security I needed. In just six months, I've experienced consistent returns and built a passive income stream.
+                                      </p>
+                                    </div>
+                                    <!-- <div
+                                      class="testimonials-card__btnholder animate-in-up"
+                                    >
+                                      <a
+                                        class="btn btn-line icon-right slide-right"
+                                        href="#0"
+                                      >
+                                        <span class="btn-caption"
+                                          >Project page</span
+                                        >
+                                        <i class="ph ph-arrow-right"></i>
+                                      </a>
+                                    </div> -->
+                                  </div>
+                                  <div
+                                    class="col-12 col-lg-6 testimonials-card__timage fullheight-l"
+                                  >
+                                    <div
+                                      class="timage__inner fullheight-l animate-in-up d-none"
+                                    >
+                                      <img
+                                        src="./img/testimonials/1400x1200_t02.webp"
+                                        alt="Testimonials Image"
+                                      />
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- single slide -->
+                          <div class="swiper-slide">
+                            <div class="testimonials-card animate-in-up">
+                              <div class="container-fluid p-0 fullheight-l">
+                                <div
+                                  class="row g-0 d-flex align-items-stretch fullheight-l"
+                                >
+                                  <div
+                                    class="col-12 col-lg-6 testimonials-card__tdata"
+                                  >
+                                    <div
+                                      class="testimonials-card__tauthor d-flex"
+                                    >
+                                      <div
+                                        class="tauthor__avatar animate-in-up d-none"
+                                      >
+                                        <img
+                                          src="./img/avatars/400x400_t02.webp"
+                                          alt="Review Author"
+                                        />
+                                      </div>
+                                      <div
+                                        class="tauthor__info d-flex flex-column justify-content-center"
+                                      >
+                                        <h4 class="tauthor__name animate-in-up">
+                                          Maria Lopez
+                                        </h4>
+                                        <p
+                                          class="tauthor__position small animate-in-up"
+                                        >
+                                        Spain
+                                        </p>
+                                        <div
+                                          class="tauthor__rating d-flex animate-in-up"
+                                        >
+                                          <i class="ph-fill ph-star"></i>
+                                          <i class="ph-fill ph-star"></i>
+                                          <i class="ph-fill ph-star"></i>
+                                          <i class="ph-fill ph-star"></i>
+                                          <i class="ph-fill ph-star"></i>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div
+                                      class="testimonials-card__descr animate-in-up"
+                                    >
+                                      <p class="type-basic-160lh">
+                                        AGS Aegis Coin is not just about staking; it's about empowering individuals. The affiliate program allowed me to build a network and earn additional income. It's a community-driven initiative where everyone benefits
+                                      </p>
+                                    </div>
+                                    <!-- <div
+                                      class="testimonials-card__btnholder animate-in-up"
+                                    >
+                                      <a
+                                        class="btn btn-line icon-right slide-right"
+                                        href="#0"
+                                      >
+                                        <span class="btn-caption"
+                                          >Project page</span
+                                        >
+                                        <i class="ph ph-arrow-right"></i>
+                                      </a>
+                                    </div> -->
+                                  </div>
+                                  <div
+                                    class="col-12 col-lg-6 testimonials-card__timage fullheight-l"
+                                  >
+                                    <div
+                                      class="timage__inner fullheight-l animate-in-up d-none"
+                                    >
+                                      <img
+                                        src="./img/testimonials/1400x1200_t02.webp"
+                                        alt="Testimonials Image"
+                                      />
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- navigation buttons -->
+                        <div
+                          class="swiper-button-prev mxd-slider-btn mxd-slider-btn-square-prev animate-in-up"
+                        >
+                          <a
+                            class="btn btn-line icon-left slide-left"
+                            href="#0"
+                          >
+                            <i class="ph ph-arrow-left"></i>
+                            <span class="btn-caption">Prev</span>
+                          </a>
+                        </div>
+                        <div
+                          class="swiper-button-next mxd-slider-btn mxd-slider-btn-square-next animate-in-up"
+                        >
+                          <a
+                            class="btn btn-line icon-right slide-right"
+                            href="#0"
+                          >
+                            <span class="btn-caption">Next</span>
+                            <i class="ph ph-arrow-right"></i>
+                          </a>
+                        </div>
+                        <!-- pagination -->
+                        <div
+                          class="swiper-pagination mxd-swiper-pagination-fraction"
+                        ></div>
+                      </div>
+                    </div>
+                    <!-- Testimonials Slider End -->
+                  </div>
+                  <!-- Content Block - Testimonials End -->
+                </div>
+              </div>
+              <!-- Inner Section Content End -->
+
+              <!-- Inner Section Aside Start -->
+              <div class="col-12 col-xl-2"></div>
+              <!-- Inner Section Aside End -->
+            </div>
+          </div>
+
+          <!-- Inner Section Off-canvas Content (Fullwidth Social Media Marquee & Lines) Start -->
+          <div class="container-fluid p-0">
+            <div class="row g-0">
+              <div class="col-12">
+                <!-- Content Block - Follow Me Marquee with SVG Objects Start -->
+                <div class="content__block no-padding section-tagline-title">
+                  <div class="items items--gsap ">
+                    <div class="items__container">
+                      <!-- single item -->
+                      <div class="item item-regular text">
+                        <p class="item__text">Follow me</p>
+                        <div class="item__image">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 92.3 93.1"
+                            fill="currentColor"
+                          >
+                            <g>
+                              <rect
+                                x="45.7"
+                                class="st0"
+                                width="1"
+                                height="93.1"
+                              />
+                              <rect
+                                x="45.7"
+                                y="0"
+                                transform="matrix(0.8412 -0.5407 0.5407 0.8412 -17.8476 32.3497)"
+                                class="st0"
+                                width="1"
+                                height="93.1"
+                              />
+                              <rect
+                                x="45.7"
+                                y="0"
+                                transform="matrix(0.4155 -0.9096 0.9096 0.4155 -15.3764 69.2119)"
+                                class="st0"
+                                width="1"
+                                height="93.1"
+                              />
+                              <rect
+                                x="-0.4"
+                                y="46.1"
+                                transform="matrix(0.9898 -0.1425 0.1425 0.9898 -6.1646 7.0506)"
+                                class="st0"
+                                width="93.1"
+                                height="1"
+                              />
+                              <rect
+                                x="-0.4"
+                                y="46.1"
+                                transform="matrix(0.7556 -0.655 0.655 0.7556 -19.2157 41.618)"
+                                class="st0"
+                                width="93.1"
+                                height="1"
+                              />
+                              <rect
+                                x="-0.4"
+                                y="46.1"
+                                transform="matrix(0.2812 -0.9597 0.9597 0.2812 -11.5032 77.7858)"
+                                class="st0"
+                                width="93.1"
+                                height="1"
+                              />
+                              <rect
+                                x="45.7"
+                                y="0"
+                                transform="matrix(0.9595 -0.2817 0.2817 0.9595 -11.2479 14.8866)"
+                                class="st0"
+                                width="1"
+                                height="93.1"
+                              />
+                              <rect
+                                x="45.7"
+                                y="0"
+                                transform="matrix(0.6549 -0.7557 0.7557 0.6549 -19.2631 50.9572)"
+                                class="st0"
+                                width="1"
+                                height="93.1"
+                              />
+                              <rect
+                                x="45.7"
+                                y="0"
+                                transform="matrix(0.1423 -0.9898 0.9898 0.1423 -6.4999 85.629)"
+                                class="st0"
+                                width="1"
+                                height="93.1"
+                              />
+                              <rect
+                                x="-0.4"
+                                y="46.1"
+                                transform="matrix(0.9097 -0.4153 0.4153 0.9097 -15.1716 23.381)"
+                                class="st0"
+                                width="93.1"
+                                height="1"
+                              />
+                              <rect
+                                x="-0.4"
+                                y="46.1"
+                                transform="matrix(0.5411 -0.8409 0.8409 0.5411 -17.9774 60.1901)"
+                                class="st0"
+                                width="93.1"
+                                height="1"
+                              />
+                            </g>
+                          </svg>
+                        </div>
+                      </div>
+                      <!-- single item -->
+                      <div class="item item-regular text">
+                        <p class="item__text">Follow me</p>
+                        <div class="item__image">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 92.3 93.1"
+                            fill="currentColor"
+                          >
+                            <g>
+                              <rect
+                                x="45.7"
+                                class="st0"
+                                width="1"
+                                height="93.1"
+                              />
+                              <rect
+                                x="45.7"
+                                y="0"
+                                transform="matrix(0.8412 -0.5407 0.5407 0.8412 -17.8476 32.3497)"
+                                class="st0"
+                                width="1"
+                                height="93.1"
+                              />
+                              <rect
+                                x="45.7"
+                                y="0"
+                                transform="matrix(0.4155 -0.9096 0.9096 0.4155 -15.3764 69.2119)"
+                                class="st0"
+                                width="1"
+                                height="93.1"
+                              />
+                              <rect
+                                x="-0.4"
+                                y="46.1"
+                                transform="matrix(0.9898 -0.1425 0.1425 0.9898 -6.1646 7.0506)"
+                                class="st0"
+                                width="93.1"
+                                height="1"
+                              />
+                              <rect
+                                x="-0.4"
+                                y="46.1"
+                                transform="matrix(0.7556 -0.655 0.655 0.7556 -19.2157 41.618)"
+                                class="st0"
+                                width="93.1"
+                                height="1"
+                              />
+                              <rect
+                                x="-0.4"
+                                y="46.1"
+                                transform="matrix(0.2812 -0.9597 0.9597 0.2812 -11.5032 77.7858)"
+                                class="st0"
+                                width="93.1"
+                                height="1"
+                              />
+                              <rect
+                                x="45.7"
+                                y="0"
+                                transform="matrix(0.9595 -0.2817 0.2817 0.9595 -11.2479 14.8866)"
+                                class="st0"
+                                width="1"
+                                height="93.1"
+                              />
+                              <rect
+                                x="45.7"
+                                y="0"
+                                transform="matrix(0.6549 -0.7557 0.7557 0.6549 -19.2631 50.9572)"
+                                class="st0"
+                                width="1"
+                                height="93.1"
+                              />
+                              <rect
+                                x="45.7"
+                                y="0"
+                                transform="matrix(0.1423 -0.9898 0.9898 0.1423 -6.4999 85.629)"
+                                class="st0"
+                                width="1"
+                                height="93.1"
+                              />
+                              <rect
+                                x="-0.4"
+                                y="46.1"
+                                transform="matrix(0.9097 -0.4153 0.4153 0.9097 -15.1716 23.381)"
+                                class="st0"
+                                width="93.1"
+                                height="1"
+                              />
+                              <rect
+                                x="-0.4"
+                                y="46.1"
+                                transform="matrix(0.5411 -0.8409 0.8409 0.5411 -17.9774 60.1901)"
+                                class="st0"
+                                width="93.1"
+                                height="1"
+                              />
+                            </g>
+                          </svg>
+                        </div>
+                      </div>
+                      <!-- single item -->
+                      <div class="item item-regular text">
+                        <p class="item__text">Follow me</p>
+                        <div class="item__image">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 92.3 93.1"
+                            fill="currentColor"
+                          >
+                            <g>
+                              <rect
+                                x="45.7"
+                                class="st0"
+                                width="1"
+                                height="93.1"
+                              />
+                              <rect
+                                x="45.7"
+                                y="0"
+                                transform="matrix(0.8412 -0.5407 0.5407 0.8412 -17.8476 32.3497)"
+                                class="st0"
+                                width="1"
+                                height="93.1"
+                              />
+                              <rect
+                                x="45.7"
+                                y="0"
+                                transform="matrix(0.4155 -0.9096 0.9096 0.4155 -15.3764 69.2119)"
+                                class="st0"
+                                width="1"
+                                height="93.1"
+                              />
+                              <rect
+                                x="-0.4"
+                                y="46.1"
+                                transform="matrix(0.9898 -0.1425 0.1425 0.9898 -6.1646 7.0506)"
+                                class="st0"
+                                width="93.1"
+                                height="1"
+                              />
+                              <rect
+                                x="-0.4"
+                                y="46.1"
+                                transform="matrix(0.7556 -0.655 0.655 0.7556 -19.2157 41.618)"
+                                class="st0"
+                                width="93.1"
+                                height="1"
+                              />
+                              <rect
+                                x="-0.4"
+                                y="46.1"
+                                transform="matrix(0.2812 -0.9597 0.9597 0.2812 -11.5032 77.7858)"
+                                class="st0"
+                                width="93.1"
+                                height="1"
+                              />
+                              <rect
+                                x="45.7"
+                                y="0"
+                                transform="matrix(0.9595 -0.2817 0.2817 0.9595 -11.2479 14.8866)"
+                                class="st0"
+                                width="1"
+                                height="93.1"
+                              />
+                              <rect
+                                x="45.7"
+                                y="0"
+                                transform="matrix(0.6549 -0.7557 0.7557 0.6549 -19.2631 50.9572)"
+                                class="st0"
+                                width="1"
+                                height="93.1"
+                              />
+                              <rect
+                                x="45.7"
+                                y="0"
+                                transform="matrix(0.1423 -0.9898 0.9898 0.1423 -6.4999 85.629)"
+                                class="st0"
+                                width="1"
+                                height="93.1"
+                              />
+                              <rect
+                                x="-0.4"
+                                y="46.1"
+                                transform="matrix(0.9097 -0.4153 0.4153 0.9097 -15.1716 23.381)"
+                                class="st0"
+                                width="93.1"
+                                height="1"
+                              />
+                              <rect
+                                x="-0.4"
+                                y="46.1"
+                                transform="matrix(0.5411 -0.8409 0.8409 0.5411 -17.9774 60.1901)"
+                                class="st0"
+                                width="93.1"
+                                height="1"
+                              />
+                            </g>
+                          </svg>
+                        </div>
+                      </div>
+                      <!-- single item -->
+                      <div class="item item-regular text">
+                        <p class="item__text">Follow me</p>
+                        <div class="item__image">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 92.3 93.1"
+                            fill="currentColor"
+                          >
+                            <g>
+                              <rect
+                                x="45.7"
+                                class="st0"
+                                width="1"
+                                height="93.1"
+                              />
+                              <rect
+                                x="45.7"
+                                y="0"
+                                transform="matrix(0.8412 -0.5407 0.5407 0.8412 -17.8476 32.3497)"
+                                class="st0"
+                                width="1"
+                                height="93.1"
+                              />
+                              <rect
+                                x="45.7"
+                                y="0"
+                                transform="matrix(0.4155 -0.9096 0.9096 0.4155 -15.3764 69.2119)"
+                                class="st0"
+                                width="1"
+                                height="93.1"
+                              />
+                              <rect
+                                x="-0.4"
+                                y="46.1"
+                                transform="matrix(0.9898 -0.1425 0.1425 0.9898 -6.1646 7.0506)"
+                                class="st0"
+                                width="93.1"
+                                height="1"
+                              />
+                              <rect
+                                x="-0.4"
+                                y="46.1"
+                                transform="matrix(0.7556 -0.655 0.655 0.7556 -19.2157 41.618)"
+                                class="st0"
+                                width="93.1"
+                                height="1"
+                              />
+                              <rect
+                                x="-0.4"
+                                y="46.1"
+                                transform="matrix(0.2812 -0.9597 0.9597 0.2812 -11.5032 77.7858)"
+                                class="st0"
+                                width="93.1"
+                                height="1"
+                              />
+                              <rect
+                                x="45.7"
+                                y="0"
+                                transform="matrix(0.9595 -0.2817 0.2817 0.9595 -11.2479 14.8866)"
+                                class="st0"
+                                width="1"
+                                height="93.1"
+                              />
+                              <rect
+                                x="45.7"
+                                y="0"
+                                transform="matrix(0.6549 -0.7557 0.7557 0.6549 -19.2631 50.9572)"
+                                class="st0"
+                                width="1"
+                                height="93.1"
+                              />
+                              <rect
+                                x="45.7"
+                                y="0"
+                                transform="matrix(0.1423 -0.9898 0.9898 0.1423 -6.4999 85.629)"
+                                class="st0"
+                                width="1"
+                                height="93.1"
+                              />
+                              <rect
+                                x="-0.4"
+                                y="46.1"
+                                transform="matrix(0.9097 -0.4153 0.4153 0.9097 -15.1716 23.381)"
+                                class="st0"
+                                width="93.1"
+                                height="1"
+                              />
+                              <rect
+                                x="-0.4"
+                                y="46.1"
+                                transform="matrix(0.5411 -0.8409 0.8409 0.5411 -17.9774 60.1901)"
+                                class="st0"
+                                width="93.1"
+                                height="1"
+                              />
+                            </g>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Content Block - Follow Me Marquee with SVG Objects End -->
+              </div>
+            </div>
+            <div class="row g-0 justify-content-center">
+              <div class="col-12 col-xl-8">
+                <!-- Content Block - Socials Start -->
+                <div class="content__block">
+                  <!-- Section Subtitle Start -->
+                  <div class="block__subtitle">
+                    <p class="tagline-chapter animate-in-up">Social media</p>
+                  </div>
+                  <!-- Section Subtitle End -->
+
+                  <!-- Socials Lines Start -->
+                  <ul class="socials-lines d-flex flex-column">
+                    <!-- socials lines single item -->
+                    <li class="socials-lines__item">
+                      <div class="socials-lines__divider animate-in-up"></div>
+                      <a
+                        class="socials-lines__link d-flex align-items-center justify-content-between"
+                        href="#"
+                        target="_blank"
+                      >
+                        <h4 class="animate-in-up">Twitter X</h4>
+                        <div class="socials-lines__icon d-flex animate-in-up">
+                          <i class="ph ph-arrow-up-right"></i>
+                        </div>
+                      </a>
+                      <div class="socials-lines__divider animate-in-up"></div>
+                    </li>
+                    
+                  </ul>
+                  <!-- Socials Lines End -->
+                </div>
+                <!-- Content Block - Socials End -->
+              </div>
+            </div>
+          </div>
+          <!-- Inner Section Off-canvas Content (Fullwidth Social Media Marquee & Lines) Start -->
+        </div>
+      </section>
+      <!-- Inner Section - Resume - End -->
+
+      <!-- Inner Section - Contact - Start -->
+      <section
+        id="contact"
+        class="inner contact inner-grid-bottom no-padding-bottom"
+      >
+        <div class="inner__wrapper">
+          <div class="container-fluid p-0">
+            <div class="row g-0">
+              <!-- Inner Section Name Start -->
+              <div class="col-12 col-xl-2">
+                <div class="inner__name">
+                  <!-- Content Block - Section Name Start -->
+                  <div class="content__block name-block">
+                    <span class="section-name icon-right animate-in-up">
+                      <span class="section-name-caption"> Thank You Note</span>
+                      <i class="ph ph-arrow-down-right"></i>
+                    </span>
+                  </div>
+                  <!-- Content Block - Section Name Start -->
+                </div>
+              </div>
+              <!-- Inner Section Name End -->
+
+              <!-- Inner Section Content Start -->
+              <div class="col-12 col-xl-8">
+                <div class="inner__content">
+                  <!-- Content Block - H2 Section Title Start -->
+                  <div class="content__block section-form-title">
+                    <div class="block__descr">
+                      <h2 class="reveal-type animate-in-up">Just say hello!</h2>
+                      <p
+                        class="h2__text text-twothirds type-basic-160lh animate-in-up"
+                      >
+                      We are deeply grateful to our global community. Your stories inspire us to create more opportunities for everyone. Together, we soar higher like the wise owl—building a future of financial independence and prosperity. Thank you for choosing AGS Aegis Coin!"
+                      </p>
+                    </div>
+                  </div>
+                  <!-- Content Block - H2 Section Title End -->
+
+                  <!-- Content Block - Contact Form Start -->
+                  <div class="content__block grid-block pre-grid-items">
+                    <div class="form-container">
+                      <!-- Reply Messages Start -->
+                      <div class="form__reply centered text-center">
+                        <i class="ph-thin ph-smiley reply__icon"></i>
+                        <p class="reply__title">Done!</p>
+                        <span class="reply__text"
+                          >Thanks for your message. I'll get back as soon as
+                          possible.</span
+                        >
+                      </div>
+                      <!-- Reply Messages End -->
+
+                    </div>
+                  </div>
+                  <!-- Content Block - Contact Form End -->
+
+                 
+                </div>
+              </div>
+              <!-- Inner Section Content End -->
+
+              <!-- Inner Section Aside Start -->
+              <div class="col-12 col-xl-2"></div>
+              <!-- Inner Section Aside End -->
+            </div>
+          </div>
+
+          <!-- Inner Section Off-canvas Content (Footer Marquee Block) Start -->
+          <div class="footer footer-marquee">
+            <div class="container-fluid p-0">
+              <div class="row g-0">
+                <div class="col-12">
+                  <!-- Content Block - Footer Marquee Start -->
+                  <div class="content__block no-padding">
+                    <div class="items items--gsap">
+                      <div class="items__container">
+                        <!-- single item -->
+                        <div class="item item-regular text">
+                          <a
+                            class="item__text"
+                            href="mailto:example@example.com?subject=Message%20from%20your%20site"
+                            >Got an idea?</a
+                          >
+                          <div class="item__image">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 92.3 93.1"
+                              fill="currentColor"
+                            >
+                              <g>
+                                <rect
+                                  x="45.7"
+                                  class="st0"
+                                  width="1"
+                                  height="93.1"
+                                />
+                                <rect
+                                  x="45.7"
+                                  y="0"
+                                  transform="matrix(0.8412 -0.5407 0.5407 0.8412 -17.8476 32.3497)"
+                                  class="st0"
+                                  width="1"
+                                  height="93.1"
+                                />
+                                <rect
+                                  x="45.7"
+                                  y="0"
+                                  transform="matrix(0.4155 -0.9096 0.9096 0.4155 -15.3764 69.2119)"
+                                  class="st0"
+                                  width="1"
+                                  height="93.1"
+                                />
+                                <rect
+                                  x="-0.4"
+                                  y="46.1"
+                                  transform="matrix(0.9898 -0.1425 0.1425 0.9898 -6.1646 7.0506)"
+                                  class="st0"
+                                  width="93.1"
+                                  height="1"
+                                />
+                                <rect
+                                  x="-0.4"
+                                  y="46.1"
+                                  transform="matrix(0.7556 -0.655 0.655 0.7556 -19.2157 41.618)"
+                                  class="st0"
+                                  width="93.1"
+                                  height="1"
+                                />
+                                <rect
+                                  x="-0.4"
+                                  y="46.1"
+                                  transform="matrix(0.2812 -0.9597 0.9597 0.2812 -11.5032 77.7858)"
+                                  class="st0"
+                                  width="93.1"
+                                  height="1"
+                                />
+                                <rect
+                                  x="45.7"
+                                  y="0"
+                                  transform="matrix(0.9595 -0.2817 0.2817 0.9595 -11.2479 14.8866)"
+                                  class="st0"
+                                  width="1"
+                                  height="93.1"
+                                />
+                                <rect
+                                  x="45.7"
+                                  y="0"
+                                  transform="matrix(0.6549 -0.7557 0.7557 0.6549 -19.2631 50.9572)"
+                                  class="st0"
+                                  width="1"
+                                  height="93.1"
+                                />
+                                <rect
+                                  x="45.7"
+                                  y="0"
+                                  transform="matrix(0.1423 -0.9898 0.9898 0.1423 -6.4999 85.629)"
+                                  class="st0"
+                                  width="1"
+                                  height="93.1"
+                                />
+                                <rect
+                                  x="-0.4"
+                                  y="46.1"
+                                  transform="matrix(0.9097 -0.4153 0.4153 0.9097 -15.1716 23.381)"
+                                  class="st0"
+                                  width="93.1"
+                                  height="1"
+                                />
+                                <rect
+                                  x="-0.4"
+                                  y="46.1"
+                                  transform="matrix(0.5411 -0.8409 0.8409 0.5411 -17.9774 60.1901)"
+                                  class="st0"
+                                  width="93.1"
+                                  height="1"
+                                />
+                              </g>
+                            </svg>
+                          </div>
+                        </div>
+                        <!-- single item -->
+                        <div class="item item-regular text">
+                          <a
+                            class="item__text"
+                            href="mailto:example@example.com?subject=Message%20from%20your%20site"
+                            >Tell me!</a
+                          >
+                          <div class="item__image">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 92.3 93.1"
+                              fill="currentColor"
+                            >
+                              <g>
+                                <rect
+                                  x="45.7"
+                                  class="st0"
+                                  width="1"
+                                  height="93.1"
+                                />
+                                <rect
+                                  x="45.7"
+                                  y="0"
+                                  transform="matrix(0.8412 -0.5407 0.5407 0.8412 -17.8476 32.3497)"
+                                  class="st0"
+                                  width="1"
+                                  height="93.1"
+                                />
+                                <rect
+                                  x="45.7"
+                                  y="0"
+                                  transform="matrix(0.4155 -0.9096 0.9096 0.4155 -15.3764 69.2119)"
+                                  class="st0"
+                                  width="1"
+                                  height="93.1"
+                                />
+                                <rect
+                                  x="-0.4"
+                                  y="46.1"
+                                  transform="matrix(0.9898 -0.1425 0.1425 0.9898 -6.1646 7.0506)"
+                                  class="st0"
+                                  width="93.1"
+                                  height="1"
+                                />
+                                <rect
+                                  x="-0.4"
+                                  y="46.1"
+                                  transform="matrix(0.7556 -0.655 0.655 0.7556 -19.2157 41.618)"
+                                  class="st0"
+                                  width="93.1"
+                                  height="1"
+                                />
+                                <rect
+                                  x="-0.4"
+                                  y="46.1"
+                                  transform="matrix(0.2812 -0.9597 0.9597 0.2812 -11.5032 77.7858)"
+                                  class="st0"
+                                  width="93.1"
+                                  height="1"
+                                />
+                                <rect
+                                  x="45.7"
+                                  y="0"
+                                  transform="matrix(0.9595 -0.2817 0.2817 0.9595 -11.2479 14.8866)"
+                                  class="st0"
+                                  width="1"
+                                  height="93.1"
+                                />
+                                <rect
+                                  x="45.7"
+                                  y="0"
+                                  transform="matrix(0.6549 -0.7557 0.7557 0.6549 -19.2631 50.9572)"
+                                  class="st0"
+                                  width="1"
+                                  height="93.1"
+                                />
+                                <rect
+                                  x="45.7"
+                                  y="0"
+                                  transform="matrix(0.1423 -0.9898 0.9898 0.1423 -6.4999 85.629)"
+                                  class="st0"
+                                  width="1"
+                                  height="93.1"
+                                />
+                                <rect
+                                  x="-0.4"
+                                  y="46.1"
+                                  transform="matrix(0.9097 -0.4153 0.4153 0.9097 -15.1716 23.381)"
+                                  class="st0"
+                                  width="93.1"
+                                  height="1"
+                                />
+                                <rect
+                                  x="-0.4"
+                                  y="46.1"
+                                  transform="matrix(0.5411 -0.8409 0.8409 0.5411 -17.9774 60.1901)"
+                                  class="st0"
+                                  width="93.1"
+                                  height="1"
+                                />
+                              </g>
+                            </svg>
+                          </div>
+                        </div>
+                        <!-- single item -->
+                        <div class="item item-regular text">
+                          <a
+                            class="item__text"
+                            href="mailto:example@example.com?subject=Message%20from%20your%20site"
+                            >Got an idea?</a
+                          >
+                          <div class="item__image">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 92.3 93.1"
+                              fill="currentColor"
+                            >
+                              <g>
+                                <rect
+                                  x="45.7"
+                                  class="st0"
+                                  width="1"
+                                  height="93.1"
+                                />
+                                <rect
+                                  x="45.7"
+                                  y="0"
+                                  transform="matrix(0.8412 -0.5407 0.5407 0.8412 -17.8476 32.3497)"
+                                  class="st0"
+                                  width="1"
+                                  height="93.1"
+                                />
+                                <rect
+                                  x="45.7"
+                                  y="0"
+                                  transform="matrix(0.4155 -0.9096 0.9096 0.4155 -15.3764 69.2119)"
+                                  class="st0"
+                                  width="1"
+                                  height="93.1"
+                                />
+                                <rect
+                                  x="-0.4"
+                                  y="46.1"
+                                  transform="matrix(0.9898 -0.1425 0.1425 0.9898 -6.1646 7.0506)"
+                                  class="st0"
+                                  width="93.1"
+                                  height="1"
+                                />
+                                <rect
+                                  x="-0.4"
+                                  y="46.1"
+                                  transform="matrix(0.7556 -0.655 0.655 0.7556 -19.2157 41.618)"
+                                  class="st0"
+                                  width="93.1"
+                                  height="1"
+                                />
+                                <rect
+                                  x="-0.4"
+                                  y="46.1"
+                                  transform="matrix(0.2812 -0.9597 0.9597 0.2812 -11.5032 77.7858)"
+                                  class="st0"
+                                  width="93.1"
+                                  height="1"
+                                />
+                                <rect
+                                  x="45.7"
+                                  y="0"
+                                  transform="matrix(0.9595 -0.2817 0.2817 0.9595 -11.2479 14.8866)"
+                                  class="st0"
+                                  width="1"
+                                  height="93.1"
+                                />
+                                <rect
+                                  x="45.7"
+                                  y="0"
+                                  transform="matrix(0.6549 -0.7557 0.7557 0.6549 -19.2631 50.9572)"
+                                  class="st0"
+                                  width="1"
+                                  height="93.1"
+                                />
+                                <rect
+                                  x="45.7"
+                                  y="0"
+                                  transform="matrix(0.1423 -0.9898 0.9898 0.1423 -6.4999 85.629)"
+                                  class="st0"
+                                  width="1"
+                                  height="93.1"
+                                />
+                                <rect
+                                  x="-0.4"
+                                  y="46.1"
+                                  transform="matrix(0.9097 -0.4153 0.4153 0.9097 -15.1716 23.381)"
+                                  class="st0"
+                                  width="93.1"
+                                  height="1"
+                                />
+                                <rect
+                                  x="-0.4"
+                                  y="46.1"
+                                  transform="matrix(0.5411 -0.8409 0.8409 0.5411 -17.9774 60.1901)"
+                                  class="st0"
+                                  width="93.1"
+                                  height="1"
+                                />
+                              </g>
+                            </svg>
+                          </div>
+                        </div>
+                        <!-- single item -->
+                        <div class="item item-regular text">
+                          <a
+                            class="item__text"
+                            href="mailto:example@example.com?subject=Message%20from%20your%20site"
+                            >Tell me!</a
+                          >
+                          <div class="item__image">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 92.3 93.1"
+                              fill="currentColor"
+                            >
+                              <g>
+                                <rect
+                                  x="45.7"
+                                  class="st0"
+                                  width="1"
+                                  height="93.1"
+                                />
+                                <rect
+                                  x="45.7"
+                                  y="0"
+                                  transform="matrix(0.8412 -0.5407 0.5407 0.8412 -17.8476 32.3497)"
+                                  class="st0"
+                                  width="1"
+                                  height="93.1"
+                                />
+                                <rect
+                                  x="45.7"
+                                  y="0"
+                                  transform="matrix(0.4155 -0.9096 0.9096 0.4155 -15.3764 69.2119)"
+                                  class="st0"
+                                  width="1"
+                                  height="93.1"
+                                />
+                                <rect
+                                  x="-0.4"
+                                  y="46.1"
+                                  transform="matrix(0.9898 -0.1425 0.1425 0.9898 -6.1646 7.0506)"
+                                  class="st0"
+                                  width="93.1"
+                                  height="1"
+                                />
+                                <rect
+                                  x="-0.4"
+                                  y="46.1"
+                                  transform="matrix(0.7556 -0.655 0.655 0.7556 -19.2157 41.618)"
+                                  class="st0"
+                                  width="93.1"
+                                  height="1"
+                                />
+                                <rect
+                                  x="-0.4"
+                                  y="46.1"
+                                  transform="matrix(0.2812 -0.9597 0.9597 0.2812 -11.5032 77.7858)"
+                                  class="st0"
+                                  width="93.1"
+                                  height="1"
+                                />
+                                <rect
+                                  x="45.7"
+                                  y="0"
+                                  transform="matrix(0.9595 -0.2817 0.2817 0.9595 -11.2479 14.8866)"
+                                  class="st0"
+                                  width="1"
+                                  height="93.1"
+                                />
+                                <rect
+                                  x="45.7"
+                                  y="0"
+                                  transform="matrix(0.6549 -0.7557 0.7557 0.6549 -19.2631 50.9572)"
+                                  class="st0"
+                                  width="1"
+                                  height="93.1"
+                                />
+                                <rect
+                                  x="45.7"
+                                  y="0"
+                                  transform="matrix(0.1423 -0.9898 0.9898 0.1423 -6.4999 85.629)"
+                                  class="st0"
+                                  width="1"
+                                  height="93.1"
+                                />
+                                <rect
+                                  x="-0.4"
+                                  y="46.1"
+                                  transform="matrix(0.9097 -0.4153 0.4153 0.9097 -15.1716 23.381)"
+                                  class="st0"
+                                  width="93.1"
+                                  height="1"
+                                />
+                                <rect
+                                  x="-0.4"
+                                  y="46.1"
+                                  transform="matrix(0.5411 -0.8409 0.8409 0.5411 -17.9774 60.1901)"
+                                  class="st0"
+                                  width="93.1"
+                                  height="1"
+                                />
+                              </g>
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Content Block - Footer Marquee End -->
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Inner Section Off-canvas Content (Footer Marquee Block) Start -->
+        </div>
+      </section>
+      <!-- Inner Section - Contact - End -->
+    </main>
+    <!-- Page Content End -->
+
+    <!-- Bottom Background Images Start -->
+    <div class="bottom__background bottom-bg-01">
+      <div class="bottom-bg-01__02 animate-card-2">
+        <img
+          src="./img/backgrounds/coin.png"
+          alt="Template background image"
+        />
+        <div class="intro-bg__shadow"></div>
+      </div>
+      <div class="bottom-bg-01__01 animate-card-2">
+        <img
+          src="./img/backgrounds/blueowlold.png"
+          alt="Template background image"
+        />
+        <div class="intro-bg__shadow"></div>
+      </div>
+    </div>
+    <!-- Bottom Background Images End -->
+
+    <!-- Mobile Menu Bottom Placeholder Start -->
+    <div class="header-offset"></div>
+    <!-- Mobile Menu Bottom Placeholder End -->
+
+    <!-- To Top Button Start -->
+    <a href="#0" id="to-top" class="btn btn-to-top slide-up">
+      <i class="ph ph-arrow-up"></i>
+    </a>
+    <!-- To Top Button End -->
+
+    <!-- Root element of PhotoSwipe. Must have class pswp. -->
+    <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+      <!-- Background of PhotoSwipe.
+      It's a separate element, as animating opacity is faster than rgba(). -->
+      <div class="pswp__bg"></div>
+
+      <!-- Slides wrapper with overflow:hidden. -->
+      <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. PhotoSwipe keeps only 3 slides in DOM to save memory. -->
+        <!-- don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+          <div class="pswp__item"></div>
+          <div class="pswp__item"></div>
+          <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+          <div class="pswp__top-bar">
+            <!--  Controls are self-explanatory. Order can be changed. -->
+
+            <div class="pswp__counter"></div>
+
+            <button
+              class="pswp__button pswp__button--close link-s"
+              title="Close (Esc)"
+            ></button>
+
+            <button
+              class="pswp__button pswp__button--share link-s"
+              title="Share"
+            ></button>
+
+            <button
+              class="pswp__button pswp__button--fs link-s"
+              title="Toggle fullscreen"
+            ></button>
+
+            <button
+              class="pswp__button pswp__button--zoom link-s"
+              title="Zoom in/out"
+            ></button>
+
+            <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+            <!-- element will get class pswp__preloader-active when preloader is running -->
+            <div class="pswp__preloader">
+              <div class="pswp__preloader__icn">
+                <div class="pswp__preloader__cut">
+                  <div class="pswp__preloader__donut"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"
+          >
+            <div class="pswp__share-tooltip"></div>
+          </div>
+
+          <button
+            class="pswp__button pswp__button--arrow--left link-s"
+            title="Previous (arrow left)"
+          ></button>
+
+          <button
+            class="pswp__button pswp__button--arrow--right link-s"
+            title="Next (arrow right)"
+          ></button>
+
+          <div class="pswp__caption">
+            <div class="pswp__caption__center"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div id="toast" class="toast ">Address copied to clipboard!</div>
+    <!-- Load Scripts Start -->
+    <script src="./js/libs.min.js"></script>
+    <script src="./js/gallery-init.js"></script>
+    <script src="./js/app.js"></script>
+    <!-- Load Scripts End -->
+<script>
+
+  function copyToClipboard(id) {
+    const inputElement = document.getElementById(id);
+    inputElement.select();
+    document.execCommand('copy');
+    
+    // Show the toast notification
+    const toast = document.getElementById('toast');
+    toast.classList.add('show');
+    
+    // Hide the toast after 3 seconds
+    setTimeout(() => {
+      toast.classList.remove('show');
+    }, 3000);
+  }
+</script>
+    <script>
+      var wrap = document.getElementById('wrap');
+  
+      // Use IntersectionObserver to detect when #wrap enters and exits the viewport
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            wrap.classList.add('animated'); // Add animation when in view
+          } else {
+            wrap.classList.remove('animated'); // Remove animation when out of view
+          }
+        });
+      });
+  
+      observer.observe(wrap);
+    </script>
+  </body>
+</html>

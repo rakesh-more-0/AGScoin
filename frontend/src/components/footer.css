@@ -1,0 +1,8 @@
+
+.webdesigntuts-workshop.active span{
+	/* animation: glow 800ms ease-out infinite alternate; */
+    color: #393;
+    text-shadow: 0 0 14px rgb(0 255 0), 0 2px 0 rgb(0 255 0 / 0%);
+    outline: none;
+}
+
