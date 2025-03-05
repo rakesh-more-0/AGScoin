@@ -55,7 +55,10 @@ const StakePage = () => {
       alert("Staking failed.");
     }
   };
-
+  const API_URL = process.env.REACT_APP_API_URL;
+  
+  console.log("app url ", API_URL);
+  
   const Staking = () => {
     const [amount, setAmount] = useState("");
     const [message, setMessage] = useState("");
@@ -212,7 +215,7 @@ const StakePage = () => {
         setMessage("Staking successful!");
     
         // Send staking data to backend API
-        await fetch("http://localhost:5000/api/stake", {
+        await fetch("${API_URL}/api/stake", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -359,7 +362,7 @@ const StakePage = () => {
   
     const fetchStakingData = async (userWallet) => {
       try {
-        const response = await axios.get(`http://localhost:5000/getStakingData/${userWallet}`);
+        const response = await axios.get(`${API_URL}/getStakingData/${userWallet}`);
         const data = response.data;
   
         console.log("Staking data:", data);

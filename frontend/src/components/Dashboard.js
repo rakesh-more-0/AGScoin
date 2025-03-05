@@ -94,7 +94,9 @@ function Dashboard() {
     }
     console.log("Coin Tossed!");
   };
-
+  const API_URL = process.env.REACT_APP_API_URL;
+  
+  console.log("app url ", API_URL);
   const handleCopy = () => {
     const urlToCopy = "https://maccoin.io/register?ref=" + walletAddress; // Replace with the URL you want to copy
     navigator.clipboard
@@ -194,7 +196,7 @@ function Dashboard() {
     
           // ✅ Fetch Staking Data from Database
           try {
-            const response = await axios.get(`http://localhost:5000/getStakingData/${userAddress}`);
+            const response = await axios.get(`${API_URL}/getStakingData/${userAddress}`);
             const data = response.data;
     
             console.log("📊 Staking data from DB:", data);
@@ -215,7 +217,7 @@ function Dashboard() {
           }
 
           try {
-            const response = await axios.get(`http://localhost:5000/getStakingData/${userAddress}`);
+            const response = await axios.get(`${API_URL}/getStakingData/${userAddress}`);
             const data = response.data;
     
             console.log("📊 Staking data from DB:", data);
@@ -237,7 +239,7 @@ function Dashboard() {
 
        
           try {
-            const response = await axios.get(`http://localhost:5000/getReStakingData/${userAddress}`);
+            const response = await axios.get(`${API_URL}/getReStakingData/${userAddress}`);
             const data = response.data;
     
             console.log("📊 gbStaking data from DB:", data);
@@ -252,7 +254,7 @@ function Dashboard() {
         }
 
         try {
-          const response = await axios.get(`http://localhost:5000/getLevelEarningData/${userAddress}`);
+          const response = await axios.get(`${API_URL}/getLevelEarningData/${userAddress}`);
           const data = response.data;
   
           console.log("📊 gblevelStaking data from DB:", data);
