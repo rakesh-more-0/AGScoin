@@ -1,31 +1,39 @@
 // src/components/IndexPage.js
-import React from "react";
+import React, { useEffect } from "react";
 import { useHistory } from "react-router-dom";
-import "./IndexPage.css"; // Add custom styles if needed
+import "./IndexPage.css";
 
 const IndexPage = () => {
   const history = useHistory();
 
-  const goToLogin = () => {
-    history.push("/login"); // Navigate to Login Page
-  };
+  useEffect(() => {
+    // Create a message listener to handle iframe communications
+    const handleMessage = (event) => {
+      // Make sure the message is from your iframe
+      if (event.data === "navigateToRegister") {
+        history.push("/register");
+      }
+    };
 
-  const goToRegister = () => {
-    history.push("/register"); // Navigate to Register Page
-  };
+    // Add event listener
+    window.addEventListener("message", handleMessage);
+
+    // Cleanup on component unmount
+    return () => {
+      window.removeEventListener("message", handleMessage);
+    };
+  }, [history]);
 
   return (
-    <>
-      <iframe
-            src="/frontasset/index-1.html"
-            title="HTML Page"
-            style={{
-                width: '100%',
-                height: '100vh',
-                border: 'none'
-            }}
-        />
-    </>
+    <iframe
+      src="/frontasset/index-1.html"
+      title="HTML Page"
+      style={{
+        width: '100%',
+        height: '100vh',
+        border: 'none'
+      }}
+    />
   );
 };
 

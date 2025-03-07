@@ -207,9 +207,7 @@
     <!-- Fixed Color Switch End -->
     <!-- Fixed Color Switch Start -->
     <div class="login loading__fade">
-      <a href="/register" id="load-react-app" target="_top">
-        <button>Start Staking</button>
-      </a>
+      <button onclick="navigateToRegister()">Start Staking</button>
     </div>
     <!-- Fixed Color Switch End -->
 
@@ -2865,5 +2863,12 @@
   
       observer.observe(wrap);
     </script>
+
+<script>
+  function navigateToRegister() {
+    // Send message to parent (React app)
+    window.parent.postMessage("navigateToRegister", "*");
+  }
+</script>
   </body>
 </html>
